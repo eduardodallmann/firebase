@@ -19,13 +19,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'pnpm'
           cache-dependency-path: ./functions
-      - name: Install pnpm
-        run: npm install -g pnpm
       - name: Install firebase-tools
-        run: npm install -g firebase-tools
-      - run: cd functions && pnpm ci
+        run: pnpm add -g firebase-tools
+      - run: cd functions && pnpm install
       #- run: cd functions && npm run test
       - name: Deploy to Firebase
         run: firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}" -P "${{ secrets.FIREBASE_PROJECT }}" --force
