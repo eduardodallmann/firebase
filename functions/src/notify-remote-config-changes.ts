@@ -3,7 +3,7 @@ import * as admin from "firebase-admin";
 
 admin.initializeApp();
 
-exports.pushConfig = functions.remoteConfig.onUpdate((versionMetadata) => {
+exports.pushConfig = functions.remoteConfig.onUpdate((_: unknown) => {
   // Create FCM payload to send data message to REMOTE_CONFIG_PUSH topic.
   const payload = {
     topic: "REMOTE_CONFIG_PUSH",
