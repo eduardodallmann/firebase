@@ -10,8 +10,8 @@
         "firebase-debug.*.log"
       ],
       "predeploy": [
-        "pnpm --filter \"$RESOURCE_DIR\" run lint",
-        "pnpm --filter \"$RESOURCE_DIR\" run build"
+        "pnpm --filter \"$RESOURCE_DIR\" lint",
+        "pnpm --filter \"$RESOURCE_DIR\" build"
       ]
     }
   ],
