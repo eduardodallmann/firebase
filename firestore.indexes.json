@@ -1,9 +1,25 @@
 {
-  "indexes": [],
+  "indexes": [
+    {
+      "collectionGroup": "records",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "year",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "month",
+          "order": "ASCENDING"
+        }
+      ]
+    }
+  ],
   "fieldOverrides": [
     {
       "collectionGroup": "publishers",
       "fieldPath": "email",
+      "ttl": false,
       "indexes": [
         {
           "order": "ASCENDING",
